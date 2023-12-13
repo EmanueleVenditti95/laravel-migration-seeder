@@ -13,8 +13,7 @@
                 <th>Orario Partenza</th>
                 <th>Orario Arrivo</th>
                 <th>Codice Treno</th>
-                <th>In orario</th>
-                <th>Cancellato</th>
+                <th>Stato</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +25,12 @@
                     <td>{{$train->departure_time}}</td>
                     <td>{{$train->arrival_time}}</td>
                     <td>{{$train->train_code}}</td>
-                    <td>{{$train->on_time}}</td>
-                    <td>{{$train->cancelled}}</td>
+                    <td>
+                        @if ($train->on_time) In Orario
+                        @elseif($train->cancelled) Cancellato
+                        @elseif(!$train->on_time) In ritardo
+                        @endif 
+                    </td>
                 </tr>
             @endforeach
         </tbody>
