@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\PagenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.index');
-});
+Route::get('/', [PagenController::class, 'index'])->name('home');
+
