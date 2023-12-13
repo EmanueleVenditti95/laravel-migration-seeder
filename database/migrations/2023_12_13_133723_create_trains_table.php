@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('company',20);
             $table->string('departure_station',50);
             $table->string('arrival_station',50);
-            $table->unsignedDecimal('departure_time',4,2);
-            $table->unsignedDecimal('arrival_time',4,2);
+            $table->dateTime('departure_time');
+            $table->dateTime('arrival_time');
             $table->unsignedMediumInteger('train_code');
             $table->unsignedTinyInteger('carriages_number');
             $table->boolean('on_time')->default(1);
