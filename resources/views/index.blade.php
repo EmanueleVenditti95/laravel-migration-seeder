@@ -4,6 +4,7 @@
 <div class="container mt-5">
     <h1 class="mb-4">{{$title}} :</h1>
 
+    <h2>{{ count($trains) }}</h2>
     <table class="table">
         <thead>
             <tr>
