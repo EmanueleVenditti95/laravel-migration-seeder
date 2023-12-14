@@ -18,10 +18,10 @@ class PagenController extends Controller
     public function index(){
         $title = 'Treni di oggi';
 
-        $builder = Train::where('departure_time','like','2023-12-13%');
+        $trains = Train::where('departure_time','like','2023-12-14%')->get();
+        //$trains = Train::where('departure_time','>',now())->get();
         // dd($builder);
 
-        $trains = $builder->get();
 
         return view('index',compact('title','trains'));
     }
